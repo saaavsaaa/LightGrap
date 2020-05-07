@@ -5,6 +5,7 @@ import date.iterator.state.CharNode;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,14 @@ import java.util.Map;
  * Created by aaa on 2020/4/18.
  */
 public class GrapPageTest {
+
+    @Test
+    public void testGrapPage() throws IOException {
+        GrapPage grap = new GrapPage();
+        String page = grap.request("http://www.cwl.gov.cn/");
+        Assert.assertNotNull(page);
+    }
+
     @Test
     public void test() {
         Map<String, String> expected = new HashMap<>();
@@ -25,6 +34,7 @@ public class GrapPageTest {
         String[] ss = new String[] {"abcde", "ade", "abc", "dee", "eade"};
         AC ac = new AC();
         ac.init(ss);
+        ac.setEnableAutoLoop(true);
         String input = "abcdeeadeeeabceadee";
         Map<String, String> actual = new HashMap<>();
         for (int i = 0; i < input.length(); i++) {
