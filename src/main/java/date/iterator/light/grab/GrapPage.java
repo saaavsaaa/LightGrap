@@ -108,6 +108,24 @@ public class GrapPage {
         }
     }
 
+//    public void downloadRedirect() throws IOException {
+//        String url = "";
+//        String local = "";
+//        CloseableHttpClient httpClient = HttpClients.custom().setRedirectStrategy(new CustomRedirectStrategy()).build();
+//
+//        URL encodeUrl = new URL(UriUtils.encodePath(url, StandardCharsets.UTF_8.name()));
+//
+//        File file = new File(local);
+//
+//        HttpGet httpget = new HttpGet(encodeUrl.toString());
+//
+//        HttpEntity entity = null;
+//        CloseableHttpResponse response = httpClient.execute(httpget);
+//        entity = response.getEntity();
+//
+//        FileUtils.copyInputStreamToFile(entity.getContent(), file);
+//    }
+
     public void upload(final String url, final String localFile){
         StringBody userName = new StringBody("aaa", ContentType.create("text/plain", Consts.UTF_8));
         StringBody password = new StringBody("123456", ContentType.create("text/plain", Consts.UTF_8));

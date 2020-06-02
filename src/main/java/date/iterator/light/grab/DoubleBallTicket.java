@@ -15,17 +15,20 @@ public class DoubleBallTicket {
 
     public void init(final String url) throws IOException {
         GrapPage grap = new GrapPage();
-//        pageContent = grap.request(url);
+        pageContent = grap.request(url);
 
-        String js = url + "js/lottery.js";
-        grap.download(js, "D:\\Github\\LightGrap\\lottery.js");
+//        String js = url + "js/lottery.js";
+//        grap.download(js, "D:\\Github\\LightGrap\\lottery.js");
+//
+//        js = url + "js/tool.js";
+//        grap.download(js, "D:\\Github\\LightGrap\\tool.js");
+//
+//        js = url + "_ws_sbu/sbu_hc.js";
+//        grap.download(js, "D:\\Github\\LightGrap\\sbu_hc.js");
 
-        js = url + "js/tool.js";
-        grap.download(js, "D:\\Github\\LightGrap\\tool.js");
-
-        ac = new AC();
-        ac.setEnableAutoLoop(true);
-        ac.setAutoLoop(' ');
+//        ac = new AC();
+//        ac.setEnableAutoLoop(true);
+//        ac.setAutoLoop(' ');
     }
 
     private void getResource(final String url) {
